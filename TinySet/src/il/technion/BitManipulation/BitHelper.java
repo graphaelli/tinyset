@@ -1,7 +1,5 @@
 package il.technion.BitManipulation;
 
-
-import org.junit.Assert;
 public class BitHelper {
 
 
@@ -85,7 +83,6 @@ public class BitHelper {
 		// make room for the word
 		final long shiftedPart = (word << len) & generateMask(toBit, 63,false);
 		final long newValuePart = generateMask(fromBit, toBit,inclusive) & (bitsToReplace << (fromBit));
-		Assert.assertTrue(Long.bitCount(newValuePart)<=len);
 
 		final long[] retVal = new long[2];
 		retVal[0] = (constantPart | shiftedPart | newValuePart);
